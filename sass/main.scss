@@ -54,6 +54,14 @@ main{
 body{
     font-size: 18px;
 }
+
+.prototype-header{
+    background:lightgreen;
+    content: "site currently under development";
+    padding:10px 10px;
+    text-align: center;
+}
+
 .logo{
     font-size: 36px;
     font-weight: 800;
@@ -366,7 +374,11 @@ footer{
         & img{
             margin-right: 40px;
             cursor: pointer;
-            filter: brightness(0%);
+            filter: brightness(100%);
+            transition: filter .2s ease-in-out;
+            &:hover{
+                filter: brightness(900%);
+            }
             
         }
         & img:last-child{
