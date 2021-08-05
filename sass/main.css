@@ -1,3 +1,8 @@
+/**
+*
+* Testing
+*
+**/
 .underline, .learn-more .learn-more__text .underline-yw, .learn-more .learn-more__text .underline-rd {
   height: 9px;
   width: 7em;
@@ -114,14 +119,42 @@ header #tagline h1 {
 .learn-more {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
+  grid-auto-flow: row;
+  -ms-grid-columns: (minmax(180px, 50%))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 50%));
   -ms-grid-rows: minmax(auto, auto);
       grid-template-rows: minmax(auto, auto);
 }
 
+@media (min-width: 361px) and (max-width: 480px) {
+  .learn-more {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .learn-more .learn-more__text {
   padding: 165px 115px 0px 165px;
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .learn-more .learn-more__text {
+    padding: 50px 115px 50px 100px;
+  }
+}
+
+.learn-more .learn-more__text#two {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
 }
 
 .learn-more .learn-more__text h2 {
@@ -133,10 +166,22 @@ header #tagline h1 {
   line-height: 1;
 }
 
+@media (min-width: 361px) and (max-width: 480px) {
+  .learn-more .learn-more__text h2 {
+    font-size: 20px;
+  }
+}
+
 .learn-more .learn-more__text p {
   font-weight: 600;
   color: #818498;
   line-height: 1.5;
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .learn-more .learn-more__text p {
+    line-height: 1;
+  }
 }
 
 .learn-more .learn-more__text .learn-more__link-container {
@@ -178,6 +223,15 @@ header #tagline h1 {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.learn-more .learn-more__image#two {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
 }
 
 .learn-more .learn-more__additional-info.blue-bg {
@@ -358,6 +412,8 @@ footer .socials {
 footer .socials img {
   margin-right: 40px;
   cursor: pointer;
+  -webkit-filter: brightness(0%);
+          filter: brightness(0%);
 }
 
 footer .socials img:last-child {

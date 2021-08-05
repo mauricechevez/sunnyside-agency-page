@@ -1,3 +1,8 @@
+@import "./media.scss";
+
+
+
+
 $secondaryFont:'Fraunces', serif;
 @mixin header__tagline($fontface, $size, $color, $weight) {
     font-family: $secondaryFont;
@@ -109,20 +114,40 @@ header{
 
 .learn-more{
     display: grid;
+    grid-auto-flow: row;
     // outline:2px solid brown;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fit, minmax(180px,50%));
     grid-template-rows: minmax(auto, auto);
+    @include media(">phone", "<=480px" ){
+        display: flex;
+        flex-direction: column;
+    }
+    
     .learn-more__text{
         padding: 165px 115px 0px 165px;
+        @include media(">phone", "<=480px" ){
+            padding: 50px 115px 50px 100px;            
+        }
+        &#two{
+            grid-column: 1/2;
+            grid-row: 1/2;
+        }
+       
         h2{
             @include header__tagline($secondaryFont, 50px,hsl(198, 62%, 26%), 700);
             margin-bottom: 45px;
             line-height: 1;
+            @include media(">phone", "<=480px" ){
+                font-size: 20px;           
+            }
         }
         p{
             font-weight: 600;
             color:hsl(232, 10%, 55%);
             line-height: 1.5;
+            @include media(">phone", "<=480px"){
+                line-height: 1;
+            }
         }
         & .learn-more__link-container{
             position: relative;
@@ -150,6 +175,9 @@ header{
                 opacity: 1;
             }
         }
+       
+
+        
     }
     .learn-more__image{
         width:100%;
@@ -157,6 +185,11 @@ header{
         img{
             width: 100%;
             object-fit: cover;
+        }
+        &#two{
+            grid-column: 2/3;
+            grid-row: 1/2;
+
         }
         
     }
@@ -288,6 +321,8 @@ footer{
         & img{
             margin-right: 40px;
             cursor: pointer;
+            filter: brightness(0%);
+            
         }
         & img:last-child{
             margin-right: 0px;
@@ -296,3 +331,4 @@ footer{
     }
 
 }
+
