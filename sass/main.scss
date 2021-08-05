@@ -121,24 +121,42 @@ header{
     @include media(">phone", "<=480px" ){
         display: flex;
         flex-direction: column;
-    }
-    
+    }    
     .learn-more__text{
-        padding: 165px 115px 0px 165px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @include media(">phone", "<=480px" ){
-            padding: 50px 115px 50px 100px;            
+            height: 400px;        
         }
-        &#two{
-            grid-column: 1/2;
-            grid-row: 1/2;
+        &#one{
+            @include media(">phone", "<=480px"){
+                order:0;
+            }
         }
-       
+     
+        &#four{
+            @include media(">phone", "<=480px"){
+                order:0;
+            }
+        }
+        .learn-more__text--wrapper{
+            width:450px;
+            @include media(">phone", "<=480px" ){
+                width:300px;
+                margin: 0 auto;
+                // border:2px solid blue;
+            }
+        }
+
         h2{
             @include header__tagline($secondaryFont, 50px,hsl(198, 62%, 26%), 700);
             margin-bottom: 45px;
             line-height: 1;
             @include media(">phone", "<=480px" ){
-                font-size: 20px;           
+                margin-bottom: 25px;
+                font-size: 25px;           
             }
         }
         p{
@@ -174,27 +192,40 @@ header{
             &:nth-of-type(1):hover ~ .underline-yw, &:nth-of-type(1):hover ~ .underline-rd{
                 opacity: 1;
             }
-        }
-       
-
-        
+        }        
     }
     .learn-more__image{
         width:100%;
         height: 100%;
+        &#three{
+            @include media(">phone", "<=480px"){
+                order:0;
+            }
+        }
         img{
             width: 100%;
+            height: 100%;
             object-fit: cover;
         }
         &#two{
             grid-column: 2/3;
             grid-row: 1/2;
-
+            @include media(">phone", "<=480px"){
+                order:-1;
+            }
         }
         
     }
+
+
     .learn-more__additional-info.blue-bg{
         height: 100%;
+        &#five{
+            @include media(">phone", "<=480px"){
+                order:2;
+                height:600px;
+            }
+        }
         h2{
             @include header__tagline($secondaryFont, 2rem,hsl(198, 62%, 26%),700 );
             margin-bottom:35px;
@@ -208,6 +239,12 @@ header{
     }
     .learn-more__additional-info.green-bg{
         height: 100%;
+        &#six{
+            @include media(">phone", "<=480px"){
+                order:2;
+                height:600px;
+            }
+        }
         h2{
             @include header__tagline($secondaryFont, 2rem,hsl(167, 40%, 24%),700 );
             margin-bottom:35px;
@@ -221,7 +258,15 @@ header{
     }
     .learn-more__additional-text{
        position: relative;
-       margin: 400px 180px 0px 180px;    
+       height: 600px;
+       width: 400px;
+       margin:0 auto;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-end;
+       align-items: center;
+      
+    //    margin: 400px 180px 0px 180px;    
        text-align: center; 
     }
     
