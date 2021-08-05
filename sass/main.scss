@@ -6,6 +6,18 @@ $secondaryFont:'Fraunces', serif;
     color: $color;
 }
 
+
+.underline{
+    height:9px;
+    width:7em;
+    opacity: .5;
+    position: absolute;
+    border-radius: 35px;
+    bottom: -4px;
+    z-index: -1;
+    transition: opacity .2s ease-in-out;
+}
+
 .green-bg{
     background:hsl(168, 34%, 41%);
     background-image: url(../images/desktop/image-graphic-design.jpg);
@@ -62,18 +74,23 @@ header{
     .links-container{
         display: flex;
         a{
-            color: white;
+            color: hsl(0, 0%, 100%);
             margin-right: 45px;
             text-decoration: none;
         }
         #contact-btn{
-            background:white;
+            background:hsl(0, 0%, 100%);
             font-family: $secondaryFont;
             color: black;
             padding: 20px 30px;
             border-radius: 35px;
             font-weight: 700;
             text-transform: uppercase;
+            transition: background .2s ease-in-out, color .2s ease-in-out;
+        }
+        #contact-btn:hover{
+            background-color: rgb(110,207,255);
+            color: white;
         }
     }
     #tagline{
@@ -107,14 +124,32 @@ header{
             color:hsl(232, 10%, 55%);
             line-height: 1.5;
         }
+        & .learn-more__link-container{
+            position: relative;
+            width:8rem;
+            text-align: center;
+            // outline: 2px solid blue;
+        }
+        
+        .underline-yw{
+            @extend .underline;
+            background:hsl(51, 100%, 49%);
+        }
+        .underline-rd{
+            @extend .underline;
+            background-color: hsl(7, 99%, 70%);
+        }
         a{
-            @include header__tagline($secondaryFont, 1rem,hsl(198, 62%, 26%),700 );
+            @include header__tagline($secondaryFont, 1rem,hsl(198, 62%, 26%),700);
             text-transform: uppercase;
             margin-top: 50px;
-            text-decoration: none;
             display: inline-block;
+            text-decoration: none;
+            z-index: 10;
+            &:nth-of-type(1):hover ~ .underline-yw, &:nth-of-type(1):hover ~ .underline-rd{
+                opacity: 1;
+            }
         }
-
     }
     .learn-more__image{
         width:100%;
@@ -222,6 +257,15 @@ footer{
     div.logo{
         margin-bottom: 50px;
     }
+    & a{
+        text-decoration: none;
+        color:hsl(168, 48%, 29%);
+        font-weight: 700;
+        transition:color .1s ease-in-out;
+        &:hover{
+            color:white;
+        }
+    }
     & ul{
         display: flex;
         margin-top: 40px;
@@ -237,16 +281,18 @@ footer{
     }
 
     .socials{
-        display: flex;
+        display: flex; 
         align-items: center;
         justify-content: center;
         margin-top: 80px;
         & img{
             margin-right: 40px;
+            cursor: pointer;
         }
         & img:last-child{
             margin-right: 0px;
         }
+        
     }
 
 }

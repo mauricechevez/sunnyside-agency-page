@@ -1,3 +1,15 @@
+.underline, .learn-more .learn-more__text .underline-yw, .learn-more .learn-more__text .underline-rd {
+  height: 9px;
+  width: 7em;
+  opacity: .5;
+  position: absolute;
+  border-radius: 35px;
+  bottom: -4px;
+  z-index: -1;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
 .green-bg {
   background: #458c7e;
   background-image: url(../images/desktop/image-graphic-design.jpg);
@@ -77,6 +89,13 @@ header .links-container #contact-btn {
   border-radius: 35px;
   font-weight: 700;
   text-transform: uppercase;
+  -webkit-transition: background .2s ease-in-out, color .2s ease-in-out;
+  transition: background .2s ease-in-out, color .2s ease-in-out;
+}
+
+header .links-container #contact-btn:hover {
+  background-color: #6ecfff;
+  color: white;
 }
 
 header #tagline {
@@ -120,6 +139,20 @@ header #tagline h1 {
   line-height: 1.5;
 }
 
+.learn-more .learn-more__text .learn-more__link-container {
+  position: relative;
+  width: 8rem;
+  text-align: center;
+}
+
+.learn-more .learn-more__text .underline-yw {
+  background: #fad400;
+}
+
+.learn-more .learn-more__text .underline-rd {
+  background-color: #fe7867;
+}
+
 .learn-more .learn-more__text a {
   font-family: "Fraunces", serif;
   font-weight: 700;
@@ -127,8 +160,13 @@ header #tagline h1 {
   color: #19536b;
   text-transform: uppercase;
   margin-top: 50px;
-  text-decoration: none;
   display: inline-block;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.learn-more .learn-more__text a:nth-of-type(1):hover ~ .underline-yw, .learn-more .learn-more__text a:nth-of-type(1):hover ~ .underline-rd {
+  opacity: 1;
 }
 
 .learn-more .learn-more__image {
@@ -271,6 +309,18 @@ footer div.logo {
   margin-bottom: 50px;
 }
 
+footer a {
+  text-decoration: none;
+  color: #266d5f;
+  font-weight: 700;
+  -webkit-transition: color .1s ease-in-out;
+  transition: color .1s ease-in-out;
+}
+
+footer a:hover {
+  color: white;
+}
+
 footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -307,6 +357,7 @@ footer .socials {
 
 footer .socials img {
   margin-right: 40px;
+  cursor: pointer;
 }
 
 footer .socials img:last-child {
