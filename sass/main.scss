@@ -179,7 +179,6 @@ header{
             position: relative;
             width:8rem;
             text-align: center;
-            // outline: 2px solid blue;
         }
         
         .underline-yw{
@@ -283,16 +282,25 @@ header{
 .testimonials{
     padding:150px;
     text-align: center;
+    @include media(">phone", "<=480px"){
+        padding:10px;
+    }
+ 
     .testimonials-header h2{
        @include header__tagline($secondaryFont,1.2rem,hsl(210, 18%, 67%) ,800 );
        text-transform: uppercase;
        margin-bottom: 60px;
        letter-spacing: .4rem;
+       @include media(">phone", "<=480px"){
+           margin-top: 60px;
+       }
+
     }
     .testimonials__container{
         display: flex;
         width: 100%;
         margin:0 auto;
+     
         div{
             width:33%;
             margin-right: 40px;
@@ -320,17 +328,58 @@ header{
             font-weight: 600;
             color:hsl(210, 18%, 67%);
         }
+        @include media(">phone", "<=480px"){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            div{
+                width:75%;
+                margin-bottom: 50px;
+                margin-right: 0;
+            }
+            div:last-child{
+                margin-bottom: 60px;
+            }
+            img{
+                margin-bottom: 30px;
+            }
+            p{
+                margin-bottom: 30px;
+            }
+
+        }
 
     }
 }
 
 .food-images_container{
     display: flex;
+    max-width: 1440px;
     width: 100%;
+    position: relative;
+    @include media(">phone","<=480px"){
+        flex-direction: column;
+    }
     img{
-        width: 25%;      
+        width: 50%;  
+        @include media(">phone", "<=480px")    {
+            width:50%;
+            // height: 49%;
+        }
+    }
+    .image-container-1, .image-container-2{
+        // border: blue solid 3px;
+        display: inline-flex;
+        @include media(">phone","<=480px"){
+            display:inline-flex;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
     }
 }
+
 
 footer{
     max-width: 1400px;
