@@ -496,6 +496,7 @@ header #tagline h1 {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  width: 100%;
 }
 
 @media (min-width: 361px) and (max-width: 480px) {

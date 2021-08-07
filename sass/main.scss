@@ -371,6 +371,7 @@ header{
     .image-container-1, .image-container-2{
         // border: blue solid 3px;
         display: inline-flex;
+        width:100%;
         @include media(">phone","<=480px"){
             display:inline-flex;
             width: 100%;
