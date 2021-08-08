@@ -380,8 +380,10 @@ header{
        flex-direction: column;
        justify-content: flex-end;
        align-items: center;
-      
-    //    margin: 400px 180px 0px 180px;    
+    @include media(">=phone", "<=480px"){
+        width:90%;
+    }
+
        text-align: center; 
     }
     
