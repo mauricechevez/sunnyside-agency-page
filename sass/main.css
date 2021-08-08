@@ -150,7 +150,7 @@ header .links-container .nav-menu a {
 
 header .links-container .nav-menu.active {
   left: 4%;
-  top: 15%;
+  top: 8rem;
   opacity: 100%;
 }
 
@@ -230,6 +230,7 @@ header .hamburger .hamburger-icon {
 @media (max-width: 768px) {
   header .hamburger {
     display: block;
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 

@@ -136,7 +136,7 @@ header{
             
             &.active{
                 left:4%;
-                top:15%;
+                top:8rem;
                 opacity: 100%;
                 @include media(">phone", "<=480px"){
                     left:10%  
@@ -149,7 +149,6 @@ header{
                 left:-100%;
                 top:10%;
                 flex-direction: column;
-                // background: white;
                 width:90%;
                 justify-content: center;
                 align-items: center;
@@ -196,6 +195,7 @@ header{
         }
         @include media("<=768px"){
             display:block;
+            color:rgba(255,255,255,.5)
         }
     }
     #tagline{
