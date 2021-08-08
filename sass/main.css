@@ -78,6 +78,15 @@ header {
   color: white;
 }
 
+@media (min-width: 360px) and (max-width: 480px) {
+  header {
+    background-image: url(../images/mobile/image-header.jpg);
+    height: 100vh;
+    background-size: 100%;
+    background-position: center bottom;
+  }
+}
+
 header .nav-bar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -422,6 +431,13 @@ header #tagline h1 {
 }
 
 @media (min-width: 360px) and (max-width: 480px) {
+  .learn-more .learn-more__additional-info.blue-bg {
+    background-image: url(../images/mobile/image-photography.jpg);
+    background-size: 100%;
+  }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
   .learn-more .learn-more__additional-info.blue-bg#five {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -447,6 +463,13 @@ header #tagline h1 {
 
 .learn-more .learn-more__additional-info.green-bg {
   height: 100%;
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+  .learn-more .learn-more__additional-info.green-bg {
+    background-image: url(../images/mobile/image-graphic-design.jpg);
+    background-size: 100%;
+  }
 }
 
 @media (min-width: 360px) and (max-width: 480px) {
