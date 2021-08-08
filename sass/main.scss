@@ -112,6 +112,17 @@ header{
                 text-decoration: none;
                 margin-left: 3rem;
             }
+            
+    
+            &.active{
+                left:4%;
+                top:20%;
+                opacity: 100%;
+                @include media(">phone", "<=480px"){
+                    left:10%  
+                }
+
+            }
             @include media("<=768px"){
                 display:flex;
                 position: absolute;
@@ -119,11 +130,11 @@ header{
                 top:10%;
                 flex-direction: column;
                 background: white;
-                width:84%;
+                width:90%;
                 justify-content: center;
                 align-items: center;
                 opacity: 0;
-                transition: top .3s;
+                transition: opacity .03s ease-in-out;
                 a{
                     color: #818498;
                     margin-top:2rem;
@@ -134,15 +145,12 @@ header{
                     // outline: 2px solid blue;
                     background-color:hsl(51deg,99%, 49%) !important;
                     margin-bottom: 2rem;
-                }
-                
+                }   
             }
-    
-            &.active{
-                left:8%;
-                top:14%;
-                opacity: 100%;
+            @include media(">phone", "<=480px"){
+                width:80%;  
             }
+            
 
         }
     }
@@ -167,7 +175,9 @@ header{
             font-weight: 900;
             text-transform: uppercase;
             font-family: $secondaryFont;
-
+            @include media(">phone", "<=768px"){
+                font-size:2.8rem;
+            }
         }
     }
 }

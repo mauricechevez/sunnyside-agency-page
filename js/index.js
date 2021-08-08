@@ -1,8 +1,9 @@
-const menu = document.getElementById('toggle-menu');
+const hamburger = document.getElementById('toggle-menu');
+const menu = document.getElementsByClassName('nav-menu')[0];
 
 // Event Listener
-menu.addEventListener('click', mobileMenu);
+hamburger.addEventListener('click', mobileMenu);
 
-function mobilMenu(){
+function mobileMenu(){
     menu.classList.toggle("active");
 }
