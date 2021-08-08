@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Sunnyside agency landing page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -31,14 +32,25 @@
   </div>
   <header>
   <div class="nav-bar">
-    <div class="logo">sunnyside</div>
+    <div class="logo">
+      <h1>sunnyside</h1>
+    </div>
     <div class="links-container">
-      <nav>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Projects</a>
-        <a href="#" id="contact-btn">Contact</a>
+      
+      <nav class="nav-menu">
+        <div class="arrow-section">
+          <div class="arrow-up"></div>
+        </div>
+        <div class="nav-links-container">
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="#" class="nav-link">Projects</a>
+        <a href="#" id="contact-btn" class="nav-link">Contact</a>
+        </div>
       </nav>
+    </div>
+    <div class="hamburger" id="toggle-menu" style="font-size: 2rem">
+      <i class="fas fa-bars" class="hamburger-icon"></i>
     </div>
   </div>
   <div id="tagline"><h1>We Are Creatives</h1></div>
@@ -151,5 +163,6 @@
     Coded by <a href="#">Maurice Chevez</a>.
   </div>
 
+<script src="./js/index.js"></script>
 </body>
 </html>
