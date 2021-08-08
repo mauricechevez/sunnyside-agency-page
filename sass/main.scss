@@ -218,6 +218,16 @@ header{
             }
         }
     }
+    .down-arrow{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height:30%;
+        @include media(">=phone", "<=480px"){
+            height: 51%;
+        }
+    }
 }
 
 .learn-more{
