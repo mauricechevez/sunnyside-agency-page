@@ -85,12 +85,30 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom:100px ;
-    // outline:5px dashed hsl(330, 100%, 71%);
     }
   
     
     .links-container{
         display: flex;
+        .arrow-section{
+            color: black;
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            justify-content: right;
+            visibility: hidden;
+        }
+        .arrow-up {
+            width: 0; 
+            height: 0; 
+            border-left: 25px solid transparent;
+            border-right: 0px solid transparent;
+            border-bottom: 30px solid white;
+            &.active{
+                visibility: visible;
+            }
+        }
+
         
         #contact-btn{
             background:hsl(0, 0%, 100%);
@@ -106,17 +124,19 @@ header{
             background-color: rgb(110,207,255);
             color: white;
         }
+
+
         .nav-menu{
             a{
                 color: hsl(0, 0%, 100%);
                 text-decoration: none;
                 margin-left: 3rem;
             }
+
             
-    
             &.active{
                 left:4%;
-                top:20%;
+                top:15%;
                 opacity: 100%;
                 @include media(">phone", "<=480px"){
                     left:10%  
@@ -129,7 +149,7 @@ header{
                 left:-100%;
                 top:10%;
                 flex-direction: column;
-                background: white;
+                // background: white;
                 width:90%;
                 justify-content: center;
                 align-items: center;
@@ -145,7 +165,18 @@ header{
                     // outline: 2px solid blue;
                     background-color:hsl(51deg,99%, 49%) !important;
                     margin-bottom: 2rem;
-                }   
+                    width:fit-content;
+                    margin:2rem auto;
+                }
+                .nav-links-container{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    text-align: center;
+                    background:white;
+                    width:100%;
+                }
             }
             @include media(">phone", "<=480px"){
                 width:80%;  
@@ -153,6 +184,7 @@ header{
             
 
         }
+        
     }
     
 
