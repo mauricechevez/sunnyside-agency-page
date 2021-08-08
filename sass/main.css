@@ -157,6 +157,17 @@ header .links-container .nav-menu a {
   margin-left: 3rem;
 }
 
+header .links-container .nav-menu a:hover {
+  -webkit-text-decoration: underline #99ddff 2px;
+          text-decoration: underline #99ddff 2px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+header .links-container .nav-menu a:last-child {
+  text-decoration: none;
+}
+
 header .links-container .nav-menu.active {
   left: 4%;
   top: 8rem;
