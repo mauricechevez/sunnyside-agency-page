@@ -187,6 +187,7 @@ header .links-container .nav-menu.active {
     color: #818498;
     margin-top: 2rem;
     margin-left: 0;
+    font-weight: 600;
   }
   header .links-container .nav-menu #contact-btn {
     background-color: #f9d401 !important;
