@@ -55,6 +55,16 @@ body {
 .logo {
   font-size: 36px;
   font-weight: 800;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5;
 }
 
 header {
@@ -87,12 +97,6 @@ header .links-container {
   display: flex;
 }
 
-header .links-container a {
-  color: white;
-  margin-right: 45px;
-  text-decoration: none;
-}
-
 header .links-container #contact-btn {
   background: white;
   font-family: "Fraunces", serif;
@@ -108,6 +112,67 @@ header .links-container #contact-btn {
 header .links-container #contact-btn:hover {
   background-color: #6ecfff;
   color: white;
+}
+
+header .links-container .nav-menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+  header .links-container .nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    left: -100%;
+    top: 10%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: white;
+    width: 84%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    opacity: 0;
+    -webkit-transition: top .3s;
+    transition: top .3s;
+  }
+  header .links-container .nav-menu a {
+    color: #818498;
+    margin-top: 2rem;
+    margin-left: 0;
+  }
+  header .links-container .nav-menu #contact-btn {
+    background-color: #f9d401 !important;
+    margin-bottom: 2rem;
+  }
+}
+
+header .links-container .nav-menu.active {
+  left: 8%;
+  top: 14%;
+  opacity: 100%;
+}
+
+header .hamburger {
+  display: none;
+}
+
+header .hamburger .hamburger-icon {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header .hamburger {
+    display: block;
+  }
 }
 
 header #tagline {
